@@ -3,7 +3,7 @@ if [ -z $REDIRECT ]; then
     echo '$REDIRECT must be set!'
     exit 1
 fi
-if [[ $REDIRECT != "http*"]]; then
+if [[ $REDIRECT != "http*" ]]; then
     echo '$REDIRECT must contain protocol!'
     exit 1
 fi
