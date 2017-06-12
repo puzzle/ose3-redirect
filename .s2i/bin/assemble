@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z $REDIRECT ]; then
+    echo '$REDIRECT must be set!'
+    exit 1
+fi
+envsubst '$REDIRECT' < /tmp/src/nginx-cfg/redirect.template > /tmp/src/nginx-cfg/redirect.conf
+rm /tmp/src/nginx-cfg/redirect.template
+$STI_SCRIPTS_PATH/assemble
