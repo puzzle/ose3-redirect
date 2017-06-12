@@ -4,8 +4,7 @@ if [ -z $REDIRECT ]; then
     exit 1
 fi
 if [[ $REDIRECT != http* ]]; then
-    echo '$REDIRECT must contain protocol!'
-    exit 1
+    REDIRECT="https://$REDIRECT"
 fi
 envsubst '$REDIRECT' < /tmp/src/nginx-cfg/redirect.template > /tmp/src/nginx-cfg/redirect.conf
 rm /tmp/src/nginx-cfg/redirect.template
